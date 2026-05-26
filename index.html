@@ -118,6 +118,11 @@
     background-position: center;
     background-attachment: fixed
     }
+@media (max-width: 767px) {
+    .hero-bg {
+        background-attachment: scroll
+    }
+}
 .card-hover:hover {
     transform: translatey(-4px);
     box-shadow: 0 10px 25px -5px rgba(154, 64, 30, 0.1), 0 8px 10px -6px rgba(154, 64, 30, 0.1)
@@ -152,11 +157,22 @@
                 </a>
 </div>
 <!-- Mobile Menu Button -->
-<button aria-label="Abrir menú" class="md:hidden text-on-surface p-2">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<button aria-label="Abrir menú" class="md:hidden text-on-surface p-2" id="mobile-menu-btn" aria-expanded="false">
+<span class="material-symbols-outlined" id="mobile-menu-icon" data-icon="menu">menu</span>
 </button>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav" class="md:hidden bg-surface border-b border-outline-variant/30 overflow-hidden transition-all duration-300 ease-in-out" style="max-height:0">
+<ul class="flex flex-col px-gutter py-4 gap-1 text-label-md font-label-md">
+<li><a class="block text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#servicios">Servicios</a></li>
+<li><a class="block text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#proyectos">Proyectos</a></li>
+<li><a class="block text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#proceso">Proceso</a></li>
+<li><a class="block text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#testimonios">Testimonios</a></li>
+<li><a class="block text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#contacto">Contacto</a></li>
+<li class="pt-2"><a class="block bg-primary text-on-primary px-6 py-3 rounded text-center text-label-md font-label-md hover:bg-surface-tint transition-colors" href="#contacto">Solicitar presupuesto gratis</a></li>
+</ul>
+</div>
 <!-- Hero Section -->
 <section class="relative min-h-[90vh] flex items-center hero-bg pt-20 pb-section-padding-mobile md:pb-section-padding-desktop">
 <div class="px-gutter max-w-container-max-width mx-auto w-full relative z-10">
@@ -198,7 +214,7 @@
 <!-- Services Section -->
 <section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-low" id="servicios">
 <div class="px-gutter max-w-container-max-width mx-auto">
-<div class="text-center mb-16">
+<div class="text-center mb-8 md:mb-16">
 <h2 class="text-headline-md font-headline-md text-on-surface mb-4">¿En qué podemos ayudarte?</h2>
 <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
 </div>
@@ -344,7 +360,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
 <!-- Large Feature -->
-<div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden relative group">
+<div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden relative group min-h-[280px]">
 <img alt="Villa moderna en Ayamonte" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A spacious, contemporary villa interior featuring a dramatic double-height ceiling and large floor-to-ceiling windows. The room is bathed in bright, natural light, highlighting the warm wooden architectural beams and the sleek, polished concrete floor. The aesthetic is modern corporate yet warmly residential, utilizing a sophisticated palette of soft grays and terracotta accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgBhvYt9FBwOjNkGQV-DyUHFR9JuhjlGOf7kbcY6NWu03iuChw8OHaZh-9niE_45kH6YfMQJWD0R3VaXV52ovdKug-NU2-0bs04_UVr_rKrojL7kcJLu9prS6UtCfLEsP_KS4gvz0Fq-lJrFeZioxmoObknOL9U_TelM5m1krME8uYHDQNShvOzq6WfNFhYT0CDF2U66uWQvnicAGwYrGl-XQR52V15-xNLmGX-YWYHKcB-jZDR3M2Ecl9wJL1-vX4CQI0cbgwVhE2"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -354,7 +370,7 @@
 </div>
 </div>
 <!-- Top Right 1 -->
-<div class="md:col-span-1 md:row-span-1 rounded-xl overflow-hidden relative group">
+<div class="md:col-span-1 md:row-span-1 rounded-xl overflow-hidden relative group min-h-[200px]">
 <img alt="Reforma de cocina" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A meticulously renovated modern kitchen with minimalist cabinetry in matte white and a stunning marble island. Warm LED strip lighting under the cabinets enhances the tactile luxury of the materials. The space feels highly functional yet elegant, adhering to a clean, professional aesthetic with subtle warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWTwRgxM3JivFgz2iAmpY6yPkaSIZAuG12_AMgtYMzXtMhOgZ3yoexGJt1jFOsPQo2fevssha2Pq-Xuk8_tNC1BYdS0I4e_f7P3IDA4R0TjJpz3kmG38JYrYI6g-__pruetPmsiTGf2qbf_sNBBdTyc6wvOpFUGQrLTuK9AUVC3kgfOi28wvMu5BuW-kEhjxWN_c5d2ugkXu26NrQTU5XEErf54aoIjMdtSfLnwJf9gl2ZE3QB4gA5O9DnnvtQQu9Ur_CwPPEZMWAL"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 <div class="absolute bottom-0 left-0 p-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -362,7 +378,7 @@
 </div>
 </div>
 <!-- Top Right 2 -->
-<div class="md:col-span-1 md:row-span-1 rounded-xl overflow-hidden relative group">
+<div class="md:col-span-1 md:row-span-1 rounded-xl overflow-hidden relative group min-h-[200px]">
 <img alt="Salón luminoso" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully styled living area featuring a plush, light-toned sofa and a sleek modern fireplace. The room is designed with architectural precision, showing clean lines and high-quality finishes. A soft, ambient light creates a craftsman warmth, making the space feel both professional and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW5UIiwR0s41ymbv5jBSUZcOnPNXKBA9tyYnPl4KRfnm3j67gQGPdtMSQFwka-vNdlljXJnMHz9ljTub7HFCNAShcLsNmdMPHpGC_wmaEFLVgjOyce1pQjTaHincWu4VFSQ1GWkeHHugE6d2xtVSCIX4VIkEGAVo7EhxfR2dsQ6ape-sRizYPXJtZy1WcbrCZ0D167jfKsCVKz2lK2Idl46Z1jH_CLk0kgxWWW_pQTzxivO6bY-btnTk6BHWnJH_f0od2Gf0za-EnB"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 <div class="absolute bottom-0 left-0 p-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -370,7 +386,7 @@
 </div>
 </div>
 <!-- Bottom Right Wide -->
-<div class="md:col-span-2 md:row-span-1 rounded-xl overflow-hidden relative group">
+<div class="md:col-span-2 md:row-span-1 rounded-xl overflow-hidden relative group min-h-[200px]">
 <img alt="Baño de diseño" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious bathroom renovation showcasing large-format stone tiles and matte black fixtures. A freestanding bathtub sits elegantly near a window with frosted glass. The lighting is soft and diffused, emphasizing the high-end finishing and creating a spa-like atmosphere grounded in modern corporate design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9M6nKaOIa6_giGo7twfq_C0U3ezN_HL59JFxJ7tOyi-hbv0ab0EMbM3CfIrZbFp2OatuLkf4K54InjntzUK_JrSIe3S1LNwVCauQUJa7SRCrFmNC71uA3TSkgqATLjoWIGnUMlGfu2kqGRvX8zFcUu7hwYzVVeDHdn1TQts9G5o-Xj0NopavD0WRGzp1JYLNuqleoascJiNWQUbHTT-nLhux9R2Y4qsok9VHT0BBZ4lUxnOEzxAwKeM85W0Ob-6LTwDl3tFO6v4Lm"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 <div class="absolute bottom-0 left-0 p-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -489,7 +505,7 @@
 <div class="px-gutter max-w-container-max-width mx-auto">
 <div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-lg border border-outline-variant/20 flex flex-col lg:flex-row">
 <!-- Contact Info Sidebar -->
-<div class="lg:w-2/5 bg-primary text-on-primary p-10 lg:p-14 flex flex-col justify-between relative overflow-hidden">
+<div class="lg:w-2/5 bg-primary text-on-primary p-6 lg:p-14 flex flex-col justify-between relative overflow-hidden">
 <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white opacity-5 rounded-full blur-2xl"></div>
 <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-black opacity-10 rounded-full blur-xl"></div>
 <div class="relative z-10">
@@ -527,7 +543,7 @@
 </div>
 </div>
 <!-- Form -->
-<div class="lg:w-3/5 p-10 lg:p-14 bg-surface">
+<div class="lg:w-3/5 p-6 lg:p-14 bg-surface">
 <form action="#" class="space-y-6" method="POST">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
@@ -571,7 +587,7 @@
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-surface-container dark:bg-surface-container-low w-full pt-section-padding-desktop pb-base border-t border-outline-variant/20">
+<footer class="bg-surface-container dark:bg-surface-container-low w-full pt-12 md:pt-section-padding-desktop pb-base border-t border-outline-variant/20">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-gutter max-w-container-max-width mx-auto mb-12">
 <!-- Brand Info -->
 <div class="flex flex-col gap-4">
@@ -626,6 +642,34 @@
 </div>
 <span class="sr-only">Contacto Directo</span>
 </a>
+<!-- Mobile Menu Script -->
+<script>
+        (function() {
+            var btn = document.getElementById("mobile-menu-btn");
+            var nav = document.getElementById("mobile-nav");
+            var icon = document.getElementById("mobile-menu-icon");
+            if (!btn || !nav) return;
+            btn.addEventListener("click", function() {
+                var isOpen = nav.style.maxHeight && nav.style.maxHeight !== "0px" && nav.style.maxHeight !== "0";
+                if (isOpen) {
+                    nav.style.maxHeight = "0";
+                    btn.setAttribute("aria-expanded", "false");
+                    if (icon) icon.textContent = "menu";
+                } else {
+                    nav.style.maxHeight = nav.scrollHeight + "px";
+                    btn.setAttribute("aria-expanded", "true");
+                    if (icon) icon.textContent = "close";
+                }
+            });
+            nav.querySelectorAll("a").forEach(function(link) {
+                link.addEventListener("click", function() {
+                    nav.style.maxHeight = "0";
+                    btn.setAttribute("aria-expanded", "false");
+                    if (icon) icon.textContent = "menu";
+                });
+            });
+        })();
+    </script>
 <!-- Smooth Scroll Script -->
 <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
